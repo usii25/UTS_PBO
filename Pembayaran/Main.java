@@ -10,19 +10,12 @@ package Pembayaran;
  */
 public class Main {
     public static void main(String[] args) {
-        // Contoh transaksi dengan Kartu Kredit
-        KartuKredit kartuKredit = new KartuKredit("1234567812345678");
-        ProsesTransaksi transaksi1 = new ProsesTransaksi("TRX001", 100.0);
-        transaksi1.prosesPembayaran(kartuKredit);
+       Transaksi kartuKredit = new KartuKredit(nomorTransaksi:"T001", nominalTransaksi:500, nomorKartu:23456789);
+       Transaksi dompetDigital = new DompetDigital(nomorTransaksi:"T002", nominalTransaksi:1000, nomorKartu:23456790);
+        Transaksi transferBank = new TransferBank(nomorTransaksi:"T003", nominalTransaksi:1500, nomorKartu:23456791);
 
-        // Contoh transaksi dengan Dompet Digital
-        DompetDigital dompetDigital = new DompetDigital(50.0);
-        ProsesTransaksi transaksi2 = new ProsesTransaksi("TRX002", 30.0);
-        transaksi2.prosesPembayaran(dompetDigital);
-
-        // Contoh transaksi dengan Transfer Bank
-        TransferBank transferBank = new TransferBank("1234567890");
-        ProsesTransaksi transaksi3 = new ProsesTransaksi("TRX003", 200.0);
-        transaksi3.prosesPembayaran(transferBank);
+        kartuKredit.proses();
+        dompetDigital.proses();
+        transferBank.proses();
     }
 }
